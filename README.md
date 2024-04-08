@@ -27,7 +27,7 @@ Ambos elementos se ejecutan bajo la misma IP pero en puertos diferentes. Si se q
 * * [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 * * [SQLite](https://www.sqlite.org)
 
-* Referencias:
+* Apoyo y referencias:
 * * Documentación respectiva de cada elemento utilizado.
 * * [StackOverflow](https://stackoverflow.com)
 * * [ChatGPT](https://chat.openai.com)
