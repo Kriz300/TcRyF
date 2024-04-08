@@ -1,0 +1,20 @@
+# Archivos y directorios generados por el entorno virtual
+venv/
+
+# Archivo de configuración de PyCharm
+.idea/
+
+# Archivos de caché y registros
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# Archivos de respaldo y temporales
+*.bak
+*.swp
+*~
+
+# Archivos de configuración y credenciales sensibles
+.env
+*.env
