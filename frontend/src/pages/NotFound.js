@@ -1,6 +1,8 @@
+//Basic imports
 import { Link } from 'react-router-dom';
 import '../css/NotFound.css'
 
+//404
 export default function NotFound() {
     return (
         <div className="not-found-container">

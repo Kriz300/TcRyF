@@ -1,10 +1,12 @@
+#Basic imports
 from flask import Blueprint, request
 
-# Database
+#Components
 from src.services.db import update_restaurant
 
 main = Blueprint('update_blueprint', __name__)
 
+#Path for update elements in database
 @main.route('/', methods=["PUT"])
 def update():
     restaurant_id = request.form.get('restaurant_id', None)

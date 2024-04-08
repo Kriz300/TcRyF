@@ -32,36 +32,39 @@ export default function Home() {
     }, []);
 
     //Modals controller
+    //Modals State
     const [ShowFilter, setShowFilter] = useState(false);
     const [showInsertLine, setShowInsertLine] = useState(false);
     const [showEditLine, setShowEditLine] = useState(false);
     const [showDeleteLine, setShowDeleteLine] = useState(false);
+    //Modal info
     const [selectedRowData, setSelectedRowData] = useState(null);
     const [selectedRowID, setSelectedRowID] = useState(null);
 
+    //Show modal events
     const handleShowFilter = () => setShowFilter(true);
-
     const handleShowInsertLine = () => setShowInsertLine(true);
-
     const handleShowEditLine = (restaurant) => {
         setSelectedRowData(restaurant);
         setShowEditLine(true);
     }
-    
     const handleShowDeleteLine = (restaurantID) => {
         setSelectedRowID(restaurantID);
         setShowDeleteLine(true);
     }
     
+    //Close modal events
     const handleCloseFilter = () => setShowFilter(false);
     const handleCloseInsertLine = () => setShowInsertLine(false);
     const handleCloseEditLine = () => setShowEditLine(false);
     const handleCloseDeleteLine = () => setShowDeleteLine(false);
 
     //Sort columns
+    //Parameters for sort elements
     const [sortField, setSortField] = useState("");
     const [order, setOrder] = useState("asc");
 
+    //Sort events
     const handleSorting = (sortField, sortOrder) => {
         if (sortField) {
             const sorted = [...restaurantTable].sort((a, b) => {
@@ -85,8 +88,10 @@ export default function Home() {
     };
 
     //Search element in table
+    //Element to search
     const [searchValue, setSearchValue] = useState ("");
 
+    //Search event
     const handleSearch = (e) => {
         const search = e.target.value;
         setSearchValue(search);
@@ -124,7 +129,8 @@ export default function Home() {
 
     return (
         <div>
-            <h1>Home Page</h1>
+            <h1>Listado de Restaurantes</h1>
+            {/* Options Container */}
             <Container style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
                 <Button style={{ backgroundColor: '#3CB371'}} onClick={() => handleShowInsertLine()}>
                     Añadir Restaurant <TiPlus  />
@@ -143,6 +149,7 @@ export default function Home() {
                     <RiRefreshLine />
                 </Button>
             </Container>
+            {/* Table container */}
             <Container style={{marginTop:'2em'}}>
                 <Table striped bordered hover responsive>
                     <thead>
@@ -156,6 +163,7 @@ export default function Home() {
                         </tr>
                     </thead>
                     <tbody>
+                        {/* Render table */}
                         {restaurantTable?.map((restaurant) => (
                             <tr key={restaurant[0]} id={restaurant[0]}>
                             <td>{restaurant[1]}</td>
@@ -175,6 +183,7 @@ export default function Home() {
                         ))}
                     </tbody>
                 </Table>
+                {/* Modals */}
                 <Filter show={ShowFilter} handleClose={handleCloseFilter} setrestaurantTable={setrestaurantTable} setIsLoading={setIsLoading}/>
                 <InsertLine show={showInsertLine} handleClose={handleCloseInsertLine} />
                 <EditLine show={showEditLine} handleClose={handleCloseEditLine} restaurantData={selectedRowData} />

@@ -1,11 +1,14 @@
+//Basic imports
 import { Modal, Button } from 'react-bootstrap';
 
 //Components
 import { deleteRestaurants } from './../../services/api/restaurantAPI'
 
+//Modal to confirm deletion of an element
 export default function DeleteLine({ show, handleClose, restaurantID }) {
     if (!restaurantID) return null;
 
+    //Send request to api and reload page
     const handleSubmit = async () => {
         try {
             await deleteRestaurants(restaurantID);

@@ -1,8 +1,9 @@
+#Basic imports
 from flask import Flask
 from flask_cors import CORS
 
 # Routes
-from .routes import index, hi, delete, update, insert, filters
+from .routes import index, delete, update, insert, filters
 
 app = Flask(__name__)
 CORS(app)
@@ -10,7 +11,6 @@ CORS(app)
 
 def init_app():
     # Blueprints
-    app.register_blueprint(hi.main, url_prefix='/')
     app.register_blueprint(index.main, url_prefix='/index')
     app.register_blueprint(filters.main, url_prefix='/filters')
     app.register_blueprint(insert.main, url_prefix='/insert')

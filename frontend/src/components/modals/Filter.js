@@ -1,10 +1,13 @@
+//Basic imports
 import { Modal, Button, Form } from 'react-bootstrap';
 
 //Components
 import { filterRestaurants } from './../../services/api/restaurantAPI'
 
+//Modal to filter data from database
 export default function Filter({ show, handleClose, setrestaurantTable, setIsLoading }) {
 
+    //Send request to api
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {

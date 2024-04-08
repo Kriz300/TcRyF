@@ -1,5 +1,7 @@
+#Basic imports
 import sqlite3
 
+#Connection with database
 def get_db_connection():
     try:
         return sqlite3.connect('DB/DB.db')
@@ -8,6 +10,7 @@ def get_db_connection():
         print(ex)
         return None
 
+#Function to insert elements into the database
 def insert_restaurant(name, locate, food, score, visited):
     conn = get_db_connection()
     try:
@@ -22,6 +25,7 @@ def insert_restaurant(name, locate, food, score, visited):
         conn.close()
         return False 
 
+#Function to update elements into the database
 def update_restaurant(id, name, locate, food, score, visited):
     conn = get_db_connection()
     try:
@@ -35,7 +39,8 @@ def update_restaurant(id, name, locate, food, score, visited):
         print(ex)
         conn.close()
         return False
-    
+
+#Function to delete elements into the database
 def delete_restaurant(id):
     conn = get_db_connection()
     try:

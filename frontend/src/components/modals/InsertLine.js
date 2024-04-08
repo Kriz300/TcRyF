@@ -1,10 +1,13 @@
+//BAsic imports
 import { Modal, Button, Form } from 'react-bootstrap';
 
 //Components
 import { insertRestaurants } from './../../services/api/restaurantAPI'
 
+//Modal to insert an element in table
 export default function EditLine({ show, handleClose }) {
 
+    //Send request to api
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {

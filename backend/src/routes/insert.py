@@ -1,10 +1,12 @@
+#Basic imports
 from flask import Blueprint, request
 
-# Database
+#Components
 from src.services.db import insert_restaurant
 
 main = Blueprint('insert_blueprint', __name__)
 
+#Path for insert elements in database
 @main.route('/', methods=["POST"])
 def insert():
     restaurant_name = request.form.get('restaurant_name', None)

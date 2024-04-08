@@ -1,10 +1,12 @@
+#Basic imports
 from flask import Blueprint, request, jsonify
 
-# Database
+#Components
 from src.services.db import get_db_connection
 
 main = Blueprint('filters_blueprint', __name__)
 
+#Path for filters elements to show
 @main.route('/', methods=["POST"])
 def insert():
     restaurant_locate = request.form.get('restaurant_locate')
