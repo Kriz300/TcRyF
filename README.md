@@ -1,6 +1,6 @@
 # Tabla con React y Flask
 
-_Proyecto fullstack usando React y Flask._
+_Proyecto fullstack usando React y Flask. Consiste en interactuar con una base de datos y una tabla en la cual se muestra el contenido._
 
 ### Ejecución y Comandos 🔧
 Puede ver la ejecución tanto del Frontend como de Backend en el README de sus respectivas carpetas.
