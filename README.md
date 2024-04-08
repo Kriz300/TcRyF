@@ -1,4 +1,4 @@
-# Pokédex Nextjs
+# Tabla con React y Flask
 
 _Proyecto fullstack usando React y Flask._
 
